@@ -1,6 +1,7 @@
 .DS_Store
 .env
 .env.local
+apps/api/.env
 node_modules/
 dist/
 __pycache__/

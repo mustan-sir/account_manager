@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.api import accounts, dashboard, imports, rewards
+from app.api import accounts, dashboard, imports, plaid, rewards
 from app.core.config import get_settings
 from app.models.base import Base
 from app.db.session import engine
@@ -31,4 +31,5 @@ def health():
 app.include_router(accounts.router)
 app.include_router(dashboard.router)
 app.include_router(imports.router)
+app.include_router(plaid.router)
 app.include_router(rewards.router)

@@ -65,3 +65,23 @@ export async function fetchRecommendation(category: string, amount: number): Pro
   });
   return data;
 }
+
+export async function fetchPlaidLinkToken(): Promise<string> {
+  const { data } = await api.get("/plaid/link-token");
+  return data.link_token;
+}
+
+export async function exchangePlaidToken(publicToken: string): Promise<{ institution: string; accounts: { id: number; name: string; type: string; balance: number }[] }> {
+  const { data } = await api.post("/plaid/exchange-token", { public_token: publicToken });
+  return data;
+}
+
+export async function syncPlaidAccounts(): Promise<{ accounts_updated: number; errors: { item_id: string; error: string }[] }> {
+  const { data } = await api.post("/plaid/sync");
+  return data;
+}
+
+export async function plaidStatus(): Promise<{ enabled: boolean }> {
+  const { data } = await api.get("/plaid/status");
+  return data;
+}

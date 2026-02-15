@@ -2,10 +2,45 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --bg-base: 15 23 42;
+  --bg-elevated: 30 41 59;
+  --border-subtle: 51 65 85;
+  --accent-emerald: 16 185 129;
+  --accent-violet: 139 92 246;
+  --accent-amber: 245 158 11;
+}
+
 body {
-  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  font-family: "DM Sans", system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
 .panel {
-  @apply rounded-xl border border-slate-800 bg-slate-900/80 p-4 shadow-lg shadow-slate-950/40;
+  @apply rounded-2xl border border-slate-800/80 bg-slate-900/60 p-5 shadow-xl shadow-black/20 backdrop-blur-sm;
+}
+
+.input-base {
+  @apply w-full rounded-lg border border-slate-700/80 bg-slate-950/80 px-3 py-2.5 text-slate-100 placeholder-slate-500 transition-colors focus:border-emerald-500/50 focus:outline-none focus:ring-1 focus:ring-emerald-500/30;
+}
+
+.btn-primary {
+  @apply rounded-lg px-4 py-2.5 font-medium transition-all hover:opacity-90 active:scale-[0.98];
+}
+
+.card-value {
+  @apply text-2xl font-semibold tracking-tight text-slate-50;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-in {
+  animation: fade-in 0.2s ease-out;
 }

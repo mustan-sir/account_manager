@@ -9,7 +9,7 @@ services:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
-      - ./apps/api/migrations/001_init.sql:/docker-entrypoint-initdb.d/001_init.sql
+      - ./apps/api/migrations:/docker-entrypoint-initdb.d
 
   api:
     build:
