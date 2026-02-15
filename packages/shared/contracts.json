@@ -1,0 +1,20 @@
+{
+  "dashboardSummary": {
+    "total_cash": "number",
+    "total_investments": "number",
+    "total_card_debt": "number",
+    "upcoming_due_count": "number"
+  },
+  "account": {
+    "id": "number",
+    "name": "string",
+    "account_type": "checking|savings|investment|retirement|credit_card",
+    "current_balance": "number"
+  },
+  "recommendation": {
+    "category": "string",
+    "card_name": "string",
+    "expected_return": "number",
+    "rationale": "string"
+  }
+}
